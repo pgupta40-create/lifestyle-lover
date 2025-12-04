@@ -4,17 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lifestyle Lover</title>
-  <style>
-    body { font-family: system-ui, sans-serif; margin: 0; background: #f7fafc; color: #222; }
-    header { background: #4f8cff; color: #fff; padding: 2rem 1rem; text-align: center; }
-    main { max-width: 600px; margin: 2rem auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 2rem; }
-    h1 { margin-top: 0; }
-    .section { margin-bottom: 2rem; }
-    .dashboard { display: flex; flex-direction: column; gap: 1.5rem; }
-    .card { background: #f0f4ff; border-radius: 8px; padding: 1rem; box-shadow: 0 1px 3px #0001; }
-    .card-title { font-weight: bold; margin-bottom: 0.5rem; }
-    @media (max-width: 700px) { main { padding: 1rem; } }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -22,7 +12,12 @@
     <p>Your Personal Health & Wellness Companion</p>
   </header>
   <main>
-    <div class="dashboard">
+    <div class="mode-toggle">
+      <span>Mode:</span>
+      <button class="mode-btn active" data-mode="personal">Personal Lifestyle</button>
+      <button class="mode-btn" data-mode="social">Social</button>
+    </div>
+    <section class="section dashboard">
       <div class="card">
         <div class="card-title">Today's Health Summary</div>
         <ul>
@@ -30,11 +25,22 @@
           <li>Sleep: 7h 15m</li>
           <li>Workout: 30 min cycling</li>
           <li>Screen Time: 3h 20m</li>
+          <li>Menstrual Cycle: Day 12</li>
         </ul>
       </div>
       <div class="card">
+        <div class="card-title">Meal Log</div>
+        <ul>
+          <li>Breakfast: Oatmeal & Berries</li>
+          <li>Lunch: Grilled Chicken Salad</li>
+          <li>Dinner: Salmon & Quinoa</li>
+        </ul>
+        <div class="card-title" style="margin-top:1rem;">Favorite Recipe</div>
+        <p>Avocado Toast with Poached Egg</p>
+      </div>
+      <div class="card">
         <div class="card-title">Smart Recommendation</div>
-        <p>It's sunny! Take a walk in the park for 20 minutes.</p>
+        <p id="recommendation">It's sunny! Take a walk in the park for 20 minutes.</p>
       </div>
       <div class="card">
         <div class="card-title">Today's Schedule</div>
@@ -44,7 +50,14 @@
           <li>3:00pm – Yoga Class</li>
         </ul>
       </div>
-    </div>
+    </section>
+    <section class="section">
+      <div class="card">
+        <div class="card-title">Dashboard & Insights</div>
+        <p>All your health metrics, recommendations, and schedule in one customizable dashboard. Switch between Personal and Social modes for a tailored experience.</p>
+      </div>
+    </section>
   </main>
+  <script src="app.js"></script>
 </body>
 </html>
